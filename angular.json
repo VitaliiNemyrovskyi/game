@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "kinetic-grid": {
+    "game": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -51,7 +51,7 @@
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/kinetic-grid/"
+              "baseHref": "/game/"
             },
             "development": {
               "optimization": false,
@@ -65,10 +65,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "kinetic-grid:build:production"
+              "buildTarget": "game:build:production"
             },
             "development": {
-              "buildTarget": "kinetic-grid:build:development"
+              "buildTarget": "game:build:development"
             }
           },
           "defaultConfiguration": "development"

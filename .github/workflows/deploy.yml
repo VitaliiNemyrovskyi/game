@@ -27,11 +27,11 @@ jobs:
       - run: npm ci
       - run: npx vitest run
       - run: npx ng build --configuration production
-      - run: cp dist/kinetic-grid/browser/index.html dist/kinetic-grid/browser/404.html
+      - run: cp dist/game/browser/index.html dist/game/browser/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/kinetic-grid/browser
+          path: dist/game/browser
 
   deploy:
     needs: build
