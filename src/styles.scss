@@ -1,0 +1,10 @@
+@use 'styles/reset';
+@use 'styles/themes';
+@use 'styles/typography' as typo;
+
+body {
+  font-family: typo.$font-body;
+  background-color: var(--color-bg);
+  color: var(--color-on-surface);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

@@ -1,0 +1,129 @@
+@use 'styles/typography' as typo;
+@use 'styles/mixins' as *;
+
+:host {
+  display: contents;
+}
+
+.result {
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+
+  &--won {
+    .result__trophy {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    }
+  }
+
+  &--lost {
+    .result__trophy {
+      background: linear-gradient(135deg, var(--color-danger) 0%, var(--color-danger-dark) 100%);
+    }
+  }
+
+  &__trophy {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    @include flex-center;
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    @include typo.heading-xl;
+    color: var(--color-secondary);
+  }
+
+  &__subtitle {
+    @include typo.label;
+    font-size: 0.6875rem;
+    color: var(--color-on-surface-muted);
+    letter-spacing: 0.15em;
+  }
+
+  &__scores {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    margin: 8px 0;
+  }
+
+  &__score-card {
+    flex: 1;
+    @include card;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__score-label {
+    @include typo.label;
+    font-size: 0.625rem;
+    color: var(--color-on-surface-muted);
+  }
+
+  &__score-value {
+    @include typo.score-display;
+    color: var(--color-on-surface);
+  }
+
+  &__score-unit {
+    @include typo.label;
+    font-size: 0.625rem;
+    color: var(--color-on-surface-muted);
+  }
+
+  &__status {
+    @include typo.label;
+    font-size: 0.625rem;
+
+    &--victor {
+      color: var(--color-tertiary);
+    }
+
+    &--defeated {
+      color: var(--color-danger);
+    }
+
+    &--offline {
+      color: var(--color-on-surface-muted);
+    }
+  }
+
+  &__exit {
+    @include typo.label;
+    font-size: 0.75rem;
+    color: var(--color-on-surface-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-on-surface);
+    }
+  }
+
+  &__rewards {
+    display: flex;
+    gap: 24px;
+    padding-top: 8px;
+  }
+
+  &__reward {
+    font-family: typo.$font-mono;
+    font-size: 0.6875rem;
+    color: var(--color-on-surface-muted);
+  }
+}

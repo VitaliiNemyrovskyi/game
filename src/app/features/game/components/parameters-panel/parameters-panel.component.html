@@ -1,0 +1,21 @@
+<div class="params">
+  <h2 class="params__title">
+    <span class="params__title-icon">⚙</span>
+    {{ 'PARAMS.TITLE' | translate }}
+  </h2>
+
+  <div class="params__field">
+    <label class="params__label" for="latency">{{ 'PARAMS.NEURAL_LATENCY' | translate }}</label>
+    <input
+      id="latency"
+      class="params__input"
+      type="number"
+      [min]="minLatency"
+      [max]="maxLatency"
+      [value]="latency()"
+      (input)="onLatencyChange($any($event.target).value)"
+      [disabled]="isRunning()"
+    />
+    <span class="params__hint">{{ 'PARAMS.RECOMMENDED' | translate }}</span>
+  </div>
+</div>

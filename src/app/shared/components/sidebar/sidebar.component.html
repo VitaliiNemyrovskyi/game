@@ -1,0 +1,45 @@
+<aside class="sidebar">
+  <div class="sidebar__header">
+    <span class="sidebar__logo">{{ 'APP.TITLE' | translate }}</span>
+  </div>
+
+  <div class="sidebar__section">
+    <div class="sidebar__section-label">
+      <span>{{ 'NAV.COMMAND_CENTER' | translate }}</span>
+      <span class="sidebar__sector">{{ 'APP.SECTOR' | translate }}</span>
+    </div>
+  </div>
+
+  <nav class="sidebar__nav">
+    @for (item of navItems; track item.label) {
+      <a
+        class="sidebar__link"
+        [routerLink]="item.route"
+        routerLinkActive="sidebar__link--active"
+        [routerLinkActiveOptions]="{ exact: item.route === '/game' }"
+      >
+        <span class="sidebar__icon">{{ item.icon }}</span>
+        <span>{{ item.label | translate }}</span>
+      </a>
+    }
+  </nav>
+
+  <div class="sidebar__footer">
+    <div class="sidebar__lang">
+      <button
+        class="sidebar__lang-btn"
+        [class.sidebar__lang-btn--active]="currentLang() === 'en'"
+        (click)="setLanguage('en')"
+      >EN</button>
+      <button
+        class="sidebar__lang-btn"
+        [class.sidebar__lang-btn--active]="currentLang() === 'uk'"
+        (click)="setLanguage('uk')"
+      >UK</button>
+    </div>
+    <button class="sidebar__theme-toggle" (click)="toggleTheme()">
+      <span class="sidebar__icon">{{ theme() === 'dark' ? '☀' : '☾' }}</span>
+      <span>{{ (theme() === 'dark' ? 'SETTINGS.LIGHT' : 'SETTINGS.DARK') | translate }}</span>
+    </button>
+  </div>
+</aside>

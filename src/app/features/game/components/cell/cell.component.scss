@@ -1,0 +1,63 @@
+.cell {
+  aspect-ratio: 1;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+
+  &--default {
+    background-color: var(--cell-default);
+    border: 1px solid var(--cell-default-border);
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: var(--shadow-glow-primary);
+    }
+  }
+
+  &--highlight {
+    background-color: var(--cell-highlight);
+    box-shadow: var(--shadow-glow-secondary);
+    animation: pulse-pop 0.5s ease forwards, pulse-glow 0.7s ease-in-out 0.5s infinite alternate;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &--success {
+    background-color: var(--cell-success);
+    box-shadow: var(--shadow-glow-tertiary);
+    cursor: default;
+  }
+
+  &--fail {
+    background-color: var(--cell-fail);
+    cursor: default;
+  }
+}
+
+@keyframes pulse-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 6px var(--cell-highlight);
+    transform: scale(1);
+  }
+  to {
+    box-shadow: 0 0 18px var(--cell-highlight), 0 0 30px rgba(255, 214, 0, 0.3);
+    transform: scale(1.08);
+  }
+}

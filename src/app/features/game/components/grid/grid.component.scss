@@ -1,0 +1,141 @@
+@use 'styles/variables' as *;
+@use 'styles/typography' as typo;
+@use 'styles/mixins' as *;
+
+.grid {
+  position: relative;
+  padding: 16px;
+  max-width: 500px;
+
+  &__cells {
+    display: grid;
+    grid-template-columns: repeat($grid-size, 1fr);
+    gap: $cell-gap;
+  }
+
+  &__corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: var(--color-on-surface-muted);
+    border-style: solid;
+
+    &--tl {
+      top: 0;
+      left: 0;
+      border-width: 2px 0 0 2px;
+    }
+
+    &--tr {
+      top: 0;
+      right: 0;
+      border-width: 2px 2px 0 0;
+    }
+
+    &--bl {
+      bottom: 0;
+      left: 0;
+      border-width: 0 0 2px 2px;
+    }
+
+    &--br {
+      bottom: 0;
+      right: 0;
+      border-width: 0 2px 2px 0;
+    }
+  }
+
+  &__start-overlay {
+    position: absolute;
+    inset: 0;
+    @include flex-center;
+    backdrop-filter: blur(2px);
+    z-index: 10;
+  }
+
+  &__start-btn {
+    @include typo.label;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: var(--color-on-primary);
+    border: 2px solid var(--color-primary-light);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: var(--shadow-glow-primary);
+    transition: all 0.2s ease;
+
+    &:hover {
+      animation: start-pulse 1s ease-in-out infinite;
+    }
+
+    &:active {
+      animation: none;
+      transform: scale(0.98);
+    }
+  }
+
+  &__start-icon {
+    font-size: 1.125rem;
+  }
+
+  &__timer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  &__timer-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--color-surface-variant);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  &__timer-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--color-tertiary) 0%, var(--color-secondary) 50%, var(--color-danger) 100%);
+    border-radius: 2px;
+    animation: timer-grow linear forwards;
+    box-shadow: 0 0 8px var(--color-secondary);
+  }
+
+  &__timer-value {
+    font-family: typo.$font-mono;
+    font-size: 0.75rem;
+    color: var(--color-on-surface-muted);
+    min-width: 52px;
+    text-align: right;
+  }
+}
+
+@keyframes start-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(26, 35, 126, 0.4);
+  }
+
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 25px rgba(26, 35, 126, 0.7), 0 0 50px rgba(26, 35, 126, 0.3);
+  }
+}
+
+@keyframes timer-grow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}

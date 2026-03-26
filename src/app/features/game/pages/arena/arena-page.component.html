@@ -1,0 +1,51 @@
+<div class="arena">
+  <div class="arena__main">
+    <div class="arena__header">
+      <div class="arena__title-group">
+        <h1 class="arena__title">{{ 'ARENA.TITLE' | translate }}</h1>
+        <span class="arena__status">
+          @if (game.isRunning()) {
+            {{ 'ARENA.STATUS_ACTIVE' | translate }}
+          } @else if (game.winner()) {
+            {{ 'ARENA.STATUS_COMPLETE' | translate }}
+          } @else {
+            {{ 'ARENA.STATUS_READY' | translate }}
+          }
+        </span>
+      </div>
+
+    </div>
+
+    <app-grid
+      [cells]="game.cells()"
+      [isRunning]="game.isRunning()"
+      [hasWinner]="game.winner() !== null"
+      [timerActive]="game.timerActive()"
+      [latency]="game.latency()"
+      [timerKey]="game.timerKey()"
+      [timeRemaining]="game.timeRemaining()"
+      (cellClicked)="onCellClick($event)"
+      (startClicked)="onStartGame(game.latency())"
+    />
+  </div>
+
+  <div class="arena__sidebar">
+    <app-scoreboard
+      [playerScore]="game.playerScore()"
+      [computerScore]="game.computerScore()"
+    />
+
+    <app-parameters-panel
+      [isRunning]="game.isRunning()"
+    />
+  </div>
+</div>
+
+<app-result-modal
+  [isOpen]="showModal()"
+  [winner]="game.winner()"
+  [playerScore]="game.playerScore()"
+  [computerScore]="game.computerScore()"
+  (playAgain)="onPlayAgain()"
+  (exitHub)="onExitHub()"
+/>

@@ -1,0 +1,44 @@
+<app-modal [isOpen]="isOpen()">
+  <div class="result" [class.result--won]="playerWon()" [class.result--lost]="!playerWon()">
+    <div class="result__trophy">{{ playerWon() ? '🏆' : '💀' }}</div>
+
+    <h2 class="result__title">
+      {{ (playerWon() ? 'MODAL.YOU_WON' : 'MODAL.YOU_LOST') | translate }}
+    </h2>
+
+    <div class="result__scores">
+      <div class="result__score-card">
+        <span class="result__score-label">{{ 'MODAL.PLAYER_STATUS' | translate }}</span>
+        <span class="result__score-value">{{ playerScore() }}</span>
+        <span
+          class="result__status"
+          [class.result__status--victor]="playerWon()"
+          [class.result__status--defeated]="!playerWon()"
+        >
+          ● {{ (playerWon() ? 'MODAL.VICTOR' : 'MODAL.DEFEATED') | translate }}
+        </span>
+      </div>
+
+      <div class="result__score-card">
+        <span class="result__score-label">{{ 'MODAL.SYSTEM_AI' | translate }}</span>
+        <span class="result__score-value">{{ computerScore() }}</span>
+        <span
+          class="result__status"
+          [class.result__status--victor]="!playerWon()"
+          [class.result__status--offline]="playerWon()"
+        >
+          ● {{ (playerWon() ? 'MODAL.OFFLINE' : 'MODAL.ACTIVE') | translate }}
+        </span>
+      </div>
+    </div>
+
+    <app-button variant="primary" [fullWidth]="true" (click)="playAgain.emit()">
+      ↻ {{ 'MODAL.PLAY_AGAIN' | translate }}
+    </app-button>
+
+    <button class="result__exit" (click)="exitHub.emit()">
+      ↻ {{ 'MODAL.EXIT_HUB' | translate }}
+    </button>
+
+  </div>
+</app-modal>

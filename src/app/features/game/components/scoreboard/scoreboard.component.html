@@ -1,0 +1,11 @@
+<div class="scoreboard">
+  <div class="scoreboard__player">
+    <span class="scoreboard__label">{{ 'GAME.PLAYER' | translate }}</span>
+    <span class="scoreboard__score">{{ playerScore().toString().padStart(2, '0') }}</span>
+  </div>
+  <div class="scoreboard__divider"></div>
+  <div class="scoreboard__player">
+    <span class="scoreboard__label">{{ 'GAME.COMPUTER' | translate }}</span>
+    <span class="scoreboard__score">{{ computerScore().toString().padStart(2, '0') }}</span>
+  </div>
+</div>

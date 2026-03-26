@@ -1,0 +1,62 @@
+@use 'styles/typography' as typo;
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+:host {
+  display: block;
+}
+
+.arena {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  min-height: 100%;
+
+  @media (max-width: #{$breakpoint-tablet - 1}) {
+    flex-direction: column;
+    padding: 16px;
+    padding-bottom: 80px;
+  }
+
+  &__main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__header {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    @include typo.heading-lg;
+    color: var(--color-on-surface);
+  }
+
+  &__status {
+    @include typo.label;
+    font-size: 0.6875rem;
+    color: var(--color-on-surface-muted);
+  }
+
+  &__sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (max-width: #{$breakpoint-tablet - 1}) {
+      width: 100%;
+    }
+  }
+}

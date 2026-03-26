@@ -1,0 +1,48 @@
+@use 'styles/typography' as typo;
+@use 'styles/variables' as *;
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: $z-bottom-nav;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    color: var(--color-on-surface-muted);
+    transition: color 0.2s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-on-surface);
+    }
+
+    &--active {
+      color: var(--color-secondary);
+    }
+  }
+
+  &__icon {
+    font-size: 1.25rem;
+  }
+
+  &__label {
+    @include typo.label;
+    font-size: 0.625rem;
+  }
+}

@@ -1,0 +1,13 @@
+@use 'styles/variables' as *;
+
+.main-content {
+  min-height: 100vh;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-left: $sidebar-width;
+  }
+
+  @media (max-width: #{$breakpoint-tablet - 1}) {
+    padding-bottom: 64px;
+  }
+}

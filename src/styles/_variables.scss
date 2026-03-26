@@ -1,0 +1,15 @@
+// Breakpoints
+$breakpoint-tablet: 1024px;
+
+// Sidebar
+$sidebar-width: 220px;
+
+// Grid
+$grid-size: 10;
+$cell-gap: 4px;
+
+// Z-index layers
+$z-modal-backdrop: 100;
+$z-modal: 101;
+$z-sidebar: 50;
+$z-bottom-nav: 50;

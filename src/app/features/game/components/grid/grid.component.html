@@ -1,0 +1,38 @@
+<div class="grid">
+  <div class="grid__corner grid__corner--tl"></div>
+  <div class="grid__corner grid__corner--tr"></div>
+  <div class="grid__corner grid__corner--bl"></div>
+  <div class="grid__corner grid__corner--br"></div>
+
+  <div class="grid__cells">
+    @for (cell of cells(); track $index) {
+      <app-cell
+        [state]="cell"
+        [index]="$index"
+        (clicked)="onCellClick($event)"
+      />
+    }
+  </div>
+
+  @if (!isRunning() && !hasWinner()) {
+    <div class="grid__start-overlay">
+      <button class="grid__start-btn" (click)="onStartClick()">
+        <span class="grid__start-icon">▶</span>
+        <span>{{ 'ARENA.INITIALIZE' | translate }}</span>
+      </button>
+    </div>
+  }
+
+  <div class="grid__timer">
+    <div class="grid__timer-bar">
+      @if (timerActive()) {
+        <div
+          class="grid__timer-fill"
+          [style.animation-duration.ms]="latency()"
+          [attr.data-key]="timerKey()"
+        ></div>
+      }
+    </div>
+    <span class="grid__timer-value">{{ timeRemaining() }}ms</span>
+  </div>
+</div>

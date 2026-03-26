@@ -1,0 +1,8 @@
+<div
+  class="cell"
+  [class.cell--default]="state() === 'default'"
+  [class.cell--highlight]="state() === 'highlight'"
+  [class.cell--success]="state() === 'success'"
+  [class.cell--fail]="state() === 'fail'"
+  (click)="onClick()"
+></div>

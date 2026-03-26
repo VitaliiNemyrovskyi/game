@@ -1,0 +1,84 @@
+{
+  "APP": {
+    "TITLE": "KINETIC_GRID",
+    "SECTOR": "СЕКТОР 7-G"
+  },
+  "NAV": {
+    "COMMAND_CENTER": "КОМАНДНИЙ_ЦЕНТР",
+    "DASHBOARD": "ПАНЕЛЬ",
+    "ARENA": "АРЕНА",
+    "ANALYTICS": "АНАЛІТИКА",
+    "INVENTORY": "ІНВЕНТАР",
+    "UPGRADES": "ПОКРАЩЕННЯ",
+    "SYSTEMS": "СИСТЕМИ",
+    "GAME": "ГРА",
+    "SETTINGS": "НАЛАШТУВАННЯ",
+    "HISTORY": "ІСТОРІЯ",
+    "HELP": "ДОПОМОГА",
+    "LOGOUT": "ВИЙТИ"
+  },
+  "ARENA": {
+    "TITLE": "АРЕНА_РІВЕНЬ_01",
+    "STATUS_READY": "СТАТУС: ГОТОВО ДО РОЗГОРТАННЯ",
+    "STATUS_ACTIVE": "СТАТУС: АКТИВНИЙ БІЙ",
+    "STATUS_COMPLETE": "СТАТУС: БІЙ ЗАВЕРШЕНО",
+    "INITIALIZE": "СТАРТ",
+    "START": "ПОЧАТИ ГРУ"
+  },
+  "GAME": {
+    "PLAYER": "ГРАВЕЦЬ",
+    "COMPUTER": "КОМП'ЮТЕР",
+    "ACTIVE_COMBATANT": "АКТИВНИЙ БОЄЦЬ",
+    "PLAYER_SCORE": "РАХУНОК ГРАВЦЯ",
+    "SYSTEM_LOGIC": "СИСТЕМНА ЛОГІКА",
+    "COMPUTER_SCORE": "РАХУНОК КОМП'ЮТЕРА"
+  },
+  "PARAMS": {
+    "TITLE": "ПАРАМЕТРИ",
+    "NEURAL_LATENCY": "НЕЙРОННА ЗАТРИМКА (МС)",
+    "RECOMMENDED": "Рекомендовано: 800-1500мс",
+    "SIMULATION_MODE": "РЕЖИМ СИМУЛЯЦІЇ",
+    "CLASSIC": "КЛАСИЧНИЙ",
+    "HYPERGRID": "ГІПЕРГРІД",
+    "TIME_LIMIT": "ЛІМІТ ЧАСУ (МС)"
+  },
+  "DIAGNOSTICS": {
+    "TITLE": "ДІАГНОСТИКА В РЕАЛЬНОМУ ЧАСІ",
+    "SYNC_RATIO": "КОЕФ_СИНХРОНІЗАЦІЇ",
+    "GRID_STABILITY": "СТАБІЛЬНІСТЬ_СІТКИ",
+    "STABLE": "СТАБІЛЬНО",
+    "UNSTABLE": "НЕСТАБІЛЬНО",
+    "CRITICAL": "КРИТИЧНО"
+  },
+  "MODAL": {
+    "CONGRATULATIONS": "ВІТАЄМО!",
+    "ARENA_DOMINANCE": "ДОМІНУВАННЯ НА АРЕНІ ПІДТВЕРДЖЕНО // СЕКТОР 7-G",
+    "SYSTEM_OVERRIDE": "СИСТЕМНЕ ПЕРЕВАНТАЖЕННЯ // СЕКТОР 7-G",
+    "PLAYER_STATUS": "СТАТУС ГРАВЦЯ",
+    "SYSTEM_AI": "СИСТЕМНИЙ ШІ",
+    "VICTOR": "ПЕРЕМОЖЕЦЬ",
+    "OFFLINE": "ОФЛАЙН",
+    "DEFEATED": "ПЕРЕМОЖЕНИЙ",
+    "ACTIVE": "АКТИВНИЙ",
+    "PTS": "ОЧК",
+    "PLAY_AGAIN": "ГРАТИ ЗНОВУ",
+    "EXIT_HUB": "ВИЙТИ ДО ХАБУ",
+    "XP_GAINED": "ОТРИМАНО ДОСВІДУ",
+    "CREDITS_EARNED": "ОТРИМАНО КРЕДИТІВ",
+    "YOU_WON": "ВИ ПЕРЕМОГЛИ!",
+    "YOU_LOST": "СИСТЕМА ПЕРЕМОГЛА"
+  },
+  "SETTINGS": {
+    "TITLE": "НАЛАШТУВАННЯ ГРИ",
+    "THEME": "ТЕМА",
+    "LANGUAGE": "МОВА",
+    "DARK": "Темна",
+    "LIGHT": "Світла",
+    "ENGLISH": "English",
+    "UKRAINIAN": "Українська"
+  },
+  "HISTORY": {
+    "TITLE": "ІСТОРІЯ МАТЧІВ",
+    "NO_MATCHES": "Матчів ще не записано"
+  }
+}

@@ -1,0 +1,42 @@
+$font-mono: 'Share Tech Mono', 'Fira Code', monospace;
+$font-display: 'Orbitron', sans-serif;
+$font-body: 'Rajdhani', sans-serif;
+
+@mixin heading-xl {
+  font-family: $font-display;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@mixin heading-lg {
+  font-family: $font-display;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@mixin heading-md {
+  font-family: $font-display;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@mixin label {
+  font-family: $font-mono;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@mixin score-display {
+  font-family: $font-display;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
