@@ -1,59 +1,54 @@
-# KineticGrid
+# Kinetic Grid
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.4.
+A fast-paced reaction time mini-game built with Angular 21. Click highlighted cells before time runs out and compete against the System AI. First to 10 points wins.
 
-## Development server
+## Prerequisites
 
-To start a local development server, run:
+- **Node.js** >= 22
+- **npm** >= 10
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Setup
 
 ```bash
-ng generate component component-name
+npm ci
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Development
 
 ```bash
-ng generate --help
+npx ng serve
 ```
 
-## Building
+Open http://localhost:4200/
 
-To build the project run:
+## Tests
 
 ```bash
-ng build
+npx ng test
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Production build
 
 ```bash
-ng test
+npx ng build --configuration production
 ```
 
-## Running end-to-end tests
+Build output: `dist/kinetic-grid/browser/`
 
-For end-to-end (e2e) testing, run:
+## Features
 
-```bash
-ng e2e
-```
+- 10x10 interactive grid with color-coded cell states
+- Configurable reaction time (100-5000ms)
+- Dark / Light theme
+- English / Ukrainian language support
+- Custom result modal with scores
+- Timer progress bar
+- Responsive layout (desktop sidebar + mobile bottom nav)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Tech stack
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 21 (standalone, zoneless, OnPush)
+- Vitest
+- SCSS with CSS custom properties
+- ngx-translate
+- GitHub Pages (CI/CD via GitHub Actions)
